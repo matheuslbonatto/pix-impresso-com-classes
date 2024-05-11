@@ -41,6 +41,6 @@
 - tipoTransacao (C - Credito / D - Debito)
 - idConta 
 - idCaixaEletronico
--
--
--
+
+
+
