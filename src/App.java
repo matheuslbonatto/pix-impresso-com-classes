@@ -2,14 +2,25 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import classes.Conta;
+import classes.ContaCorrente;
+import classes.ContaPoupanca;
+import classes.ContaSalario;
 
 public class App {
     public static void main(String[] args) throws Exception {
        ArrayList<Conta> contas = new ArrayList<Conta>();
-       contas.add(new Conta(1, 123, 1234, 0, 
-                            "Matheus Bonatto", "045.632.089-06", 1, 
+       contas.add(new ContaCorrente(1, 123, 1234, 0, 
+                            "Matheus Bonatto", "045.632.089-06", 
                             "12345678912345", "123"));
-       
+
+        contas.add(new ContaSalario(2, 123, 1234, 0, 
+                                    "Matheus Bonatto", "045.632.089-06", 
+                                    "12345678912345", "123"));
+    
+        contas.add(new ContaPoupanca(2, 123, 1234, 0, 
+                                    "Matheus Bonatto", "045.632.089-06", 
+                                    "12345678912345", "123"));
+        
         Scanner scanner = new Scanner(System.in);
 
        // - > ENTRADA
@@ -18,8 +29,11 @@ public class App {
        // 2.1 - Ler os dados do cartão
        System.out.println("Insira o numero do cartão: ");
        String numeroCartao = scanner.nextLine();
+      
+       
        
         Conta contaSaque = null;
+        
         for (Conta conta: contas){
             // Se o numero do cartão for igual a o numero de cartão de uma conta
             if (conta.getNumeroCartao().equals(numeroCartao)) {
@@ -29,13 +43,14 @@ public class App {
         }
         // Se o cartão não for encontradovai apresentar um erro e terminar o programa
         if (contaSaque == null) {
+            scanner.close(); 
             throw new Error("Conta não encontrada!");
         }
 
        // 3 - Inserir a senha
        System.out.println("Insira sua senha");
        String senha = scanner.nextLine();
-       
+       scanner.close(); 
        // 4 - Validar a Senha - > PROCESSAMENTO INTERMEDIARIO 
        // Se a senha estiver incorreta vai apresentar um erro e terminar o programa
        if (!contaSaque.getSenha().equals(senha)) {
@@ -43,6 +58,7 @@ public class App {
        }
        
        // 5 - Informar o valor do saque 
+       
        
        // - > PROCESSAMENTO     
        // 6 - Validar se o caixa possui saldo
@@ -52,6 +68,6 @@ public class App {
        
        // - > SAIDA
        // 10 - Encerrar a operação
-       scanner.close(); 
+       
     }
 }
