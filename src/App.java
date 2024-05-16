@@ -21,6 +21,9 @@ public class App {
                                     "Matheus Bonatto", "045.632.089-06", 
                                     "12345678912345", "123"));
         
+        // TODO - Criar uma lista de caixas eletronicos
+        // TODO - Criar objetos do tipo caixa eletronico
+        
         Scanner scanner = new Scanner(System.in);
 
        // - > ENTRADA
@@ -58,7 +61,9 @@ public class App {
        }
        
        // 5 - Informar o valor do saque 
-       
+       // TODO - 5.1 - Informar o id do Caixa Eletronico
+
+       // TODO - 5.2 - Buscar o caixa eletronico na lista
        
        // - > PROCESSAMENTO     
        // 6 - Validar se o caixa possui saldo
