@@ -27,5 +27,23 @@ public void setLocalizacao(String localizacao) {
 public void setSaldo(Double saldo) {
     this.saldo = saldo;
 }
-    
+
+
+public int getIdCaixaEletronico() {
+    return idCaixaEletronico;
 }
+
+
+public String getLocalizacao() {
+    return localizacao;
+}
+
+
+public Double getSaldo() {
+    return saldo;
+}
+
+
+}
+    
+
